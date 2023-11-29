@@ -14,7 +14,7 @@ class _KeranjangState extends State<Keranjang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF181818),
+      backgroundColor: Color(0xFF191919),
       appBar: AppBar(
         backgroundColor: Color(0xFF121212),
         title: Text(
@@ -29,7 +29,7 @@ class _KeranjangState extends State<Keranjang> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(15, 15, 0, 0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,9 +44,9 @@ class _KeranjangState extends State<Keranjang> {
                   ),
                 ),
                 Container(
-                    width: 260,
-                    height: 100,
-                    decoration: BoxDecoration(),
+                    width: 280,
+                    height: 110,
+                    // decoration: BoxDecoration(color: Colors.red),
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Column(
@@ -111,71 +111,63 @@ class _KeranjangState extends State<Keranjang> {
                               )
                             ],
                           ),
-                          Row(
-                            children: [
-                              Text(
-                                'Rp. 4.499.000',
-                                style: GoogleFonts.readexPro(
-                                  fontSize: 18,
-                                  color: Color(0xFFCE9018),
-                                ),
-                              ),
-                              Container(
-                                  width: 60,
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x00FFFFFF),
-                                    borderRadius: BorderRadius.circular(8),
-                                    shape: BoxShape.rectangle,
-                                    border: Border.all(
-                                      color: Color(0x00E0E3E7),
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      IconButton(
-                                        icon: Icon(
-                                          Icons.remove,
-                                          color: _counter > 0
-                                              ? Colors
-                                                  .blue // Ganti dengan warna yang sesuai
-                                              : Colors
-                                                  .grey, // Ganti dengan warna yang sesuai
-                                          size: 14,
-                                        ),
-                                        onPressed: () {
-                                          if (_counter > 0) {
-                                            setState(() {
-                                              _counter--;
-                                            });
-                                          }
-                                        },
+                          Container(
+                            width: 280,
+                            height: 40,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    IconButton(
+                                      splashColor: Colors.transparent,
+                                      icon: Icon(
+                                        Icons.remove,
+                                        color: _counter > 0
+                                            ? Color(0xFFCE9018)
+                                            : Colors.grey,
+                                        size: 20,
                                       ),
-                                      Text(
-                                        _counter.toString(),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          color: Color(0xFFCE9018),
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                      IconButton(
-                                        icon: Icon(
-                                          Icons.add,
-                                          color: Colors
-                                              .blue, // Ganti dengan warna yang sesuai
-                                          size: 16,
-                                        ),
-                                        onPressed: () {
+                                      onPressed: () {
+                                        if (_counter > 0) {
                                           setState(() {
-                                            _counter++;
+                                            _counter--;
                                           });
-                                        },
+                                        }
+                                      },
+                                    ),
+                                    Text(
+                                      _counter.toString(),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: Colors.white,
+                                        fontSize: 16,
                                       ),
-                                    ],
-                                  )),
-                            ],
+                                    ),
+                                    IconButton(
+                                      icon: Icon(
+                                        Icons.add,
+                                        color: Color(0xFFCE9018),
+                                        size: 20,
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          _counter++;
+                                        });
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'Rp. 4.499.000',
+                                  style: GoogleFonts.readexPro(
+                                    fontSize: 18,
+                                    color: Color(0xFFCE9018),
+                                  ),
+                                ),
+                              ],
+                            ),
                           )
                         ],
                       ),

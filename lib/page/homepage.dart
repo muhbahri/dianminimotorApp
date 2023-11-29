@@ -275,7 +275,7 @@ class _HomePageState extends State<HomePage> {
                 child: ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
-                    // tambah row produk dengan item count
+                    // tambah item produk dengan item count
                     itemCount: 3,
                     itemBuilder: (context, index) {
                       return Padding(
